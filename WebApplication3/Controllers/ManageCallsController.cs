@@ -42,43 +42,43 @@ public class ManageCallsController : Controller
     [HttpGet("call/{id}")]
     public ActionResult EditCalls(int id)
     {
-        ViewBag.CustomerId = id;
-        ViewBag.Customer = _service.GetCustomerById(id);
-        return View(null);
+        ViewBag.CallId = id;
+        ViewBag.Call = _service.GetCallById(id);
+        return View("EditCalls");
     }
     
     [HttpPost("edit-call")]
     public void EditCalls(IFormCollection form)
     {
-   
+        int callId = int.Parse(form["CallId"]);
         int customerId = int.Parse(form["CustomerId"]);
-        string customerName = form["CustomerName"];
-        string customerSurname = form["CustomerSurname"];
-        string address = form["Address"];
-        string postCode = form["PostCode"];
-        string country = form["Country"];
+        var TimeOfCall = form["TimeOfCall"];
+        var DateOfCall = form["DateOfCall"];
+        string Subject = form["Subject"];
+        string Description = form["Description"];
 
 
-        Customer editedCustomer = new Customer
+
+        Call editedCall = new Call
         {
+            CallId = callId,
             CustomerId = customerId,
-            CustomerName = customerName,
-            CustomerSurname = customerSurname,
-            Address = address,
-            PostCode = postCode,
-            Country = country,
+            TimeOfCall = TimeSpan.Parse(TimeOfCall),
+            DateOfCall = DateTime.Parse(DateOfCall),
+            Subject = Subject,
+            Description = Description,
 
 
        
         };
-        _service.SaveCustomer(editedCustomer);
+        _service.SaveCall(editedCall);
     }
 
     [HttpGet("deleteCall/{id}")]
     public ActionResult DeleteCall(int id)
     {
         _service.DeleteCall(id);
-        return RedirectToAction("Dashboard","Home");
+        return RedirectToAction("CustomerCalls");
     }
  
 

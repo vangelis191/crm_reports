@@ -1,0 +1,104 @@
+@model Call
+<style>
+    .back-button {
+        /* Add your back button styles here */
+    }
+
+    .flex-items {
+        display: flex;
+        gap: 20px;
+    }
+</style>
+
+@{
+    var id = ViewBag.CallId;
+    Call call = ViewBag.Call;
+  
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CRM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<h2>Call Form</h2>
+
+<form id="callForm">
+
+    <div>
+        <label for="callId">Call ID:</label>
+        <input disabled="disabled" id="callId" name="CallId" value="@id">
+    </div>
+
+    <div>
+        <label for="customerId">Customer ID:</label>
+        <input  disabled="disabled"id="customerId" name="CustomerId" value="@call.CustomerId">
+    </div>
+
+    <div>
+        <label for="dateOfCall">Date of Call:</label>
+        <input type="date" id="dateOfCall" name="DateOfCall" value="@call.DateOfCall.ToString("yyyy-MM-dd")">
+    </div>
+
+    <div>
+        <label for="timeOfCall">Time of Call:</label>
+        <input type="time" id="timeOfCall" name="TimeOfCall" value="@call.TimeOfCall.ToString("hh\\:mm")">
+    </div>
+
+    <div>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="Subject" value="@call.Subject">
+    </div>
+
+    <div>
+        <label for="description">Description:</label>
+        <textarea id="description" name="Description">@call.Description</textarea>
+    </div>
+
+    <div class="flex-items" id="flex-items">
+        <button type="button" id="submitBtn">Submit</button>
+    </div>
+</form>
+
+@section scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('submitBtn').addEventListener('click', function () {
+
+                let formData = new FormData(document.getElementById('callForm'));
+                let myForm = $('#callForm');
+                fetch('/edit-call', {
+                    method: 'POST',
+                    body: myForm.serialize(),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
+                    .then(res => {
+
+                        document.getElementById('callForm').reset();
+                        window.location.href = '/CustomerCalls';
+
+                    })
+                    .catch(error => {
+
+                        console.error(error);
+                    });
+            });
+        });
+    </script>
+}

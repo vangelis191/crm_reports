@@ -41,6 +41,16 @@ public class CustomerService
 
     public void DeleteCall(int id)
     {
-        throw new NotImplementedException();
+        _repository.DeleteCall(id);
+    }
+
+    public Call GetCallById(int id)
+    {
+        return  _repository.getCallById(id);
+    }
+
+    public void SaveCall(Call editedCall)
+    {
+        _repository.SaveCall(editedCall);
     }
 }

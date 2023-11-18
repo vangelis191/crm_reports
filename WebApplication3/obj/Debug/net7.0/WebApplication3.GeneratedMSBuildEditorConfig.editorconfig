@@ -32,12 +32,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlQ2FsbHMvQ3VzdG9tZXJDYWxscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/ManageCustomers/AddEditCustomers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlQ3VzdG9tZXJzL0FkZEVkaXRDdXN0b21lcnMuY3NodG1s
+[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/ManageCalls/EditCalls.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlQ2FsbHMvRWRpdENhbGxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/ManageCustomers/Customers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlQ3VzdG9tZXJzL0N1c3RvbWVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/ManageCustomers/EditCustomers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlQ3VzdG9tZXJzL0VkaXRDdXN0b21lcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/Shared/Error.cshtml]

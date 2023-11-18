@@ -44,7 +44,7 @@ public class ManageCustomersController : Controller
     {
         ViewBag.CustomerId = id;
          ViewBag.Customer = _service.GetCustomerById(id);
-        return View("AddEditCustomers");
+        return View("EditCustomers");
     }
     
     [HttpPost("edit-customer")]

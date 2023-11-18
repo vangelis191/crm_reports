@@ -57,8 +57,6 @@ public class CustomerRepository
     public  Customer getCtomerById(int id)
     {
         Customer customer = null;
-    
-
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             connection.Open();
@@ -173,5 +171,85 @@ public class CustomerRepository
         }
 
         return calls;
+    }
+
+    public void DeleteCall(int id)
+    {
+        // Call the stored procedure to delete the customer by ID
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
+
+            using (var command = new SqlCommand("DeleteCall", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                
+                command.Parameters.AddWithValue("@CallId", id);
+                
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public Call getCallById(int id)
+    {
+        Call call = null;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
+
+            int callId = id;
+
+            using (SqlCommand command = new SqlCommand("GetByCallById", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Add parameter for CustomerId
+                command.Parameters.AddWithValue("@CallId", callId);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        call = new Call
+                        {
+                            CallId = (int)reader["CallId"],
+                            CustomerId = (int)reader["CustomerId"],
+                            TimeOfCall = (TimeSpan)reader["TimeOfCall"],
+                            DateOfCall = (DateTime)reader["DateOfCall"],
+                            Subject = (string)reader["Subject"],
+                            Description = (string)reader["Description"],
+                     
+                        };
+
+                     
+                    }
+                }
+            }
+        }
+
+    
+        return call;
+    }
+
+    public void SaveCall(Call call)
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
+
+            using (SqlCommand command = new SqlCommand("SaveCall", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@CallId", call.CallId);
+                command.Parameters.AddWithValue("@DateOfCall", call.DateOfCall);
+                command.Parameters.AddWithValue("@TimeOfCall", call.TimeOfCall);
+                command.Parameters.AddWithValue("@Subject", call.Subject);
+                command.Parameters.AddWithValue("@Description", call.Description);
+                command.Parameters.AddWithValue("@CustomerId", call.CustomerId);
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

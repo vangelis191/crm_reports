@@ -64,8 +64,8 @@
                <td>@call.Subject</td>
                <td>@call.Description)</td>
                <td>
-                   @Html.ActionLink("Edit", "", new { id = call.CallID }) |
-                   @Html.ActionLink("Delete", "DeleteCall", new { id = call.CallID }, new { onclick = "return confirm('Are you sure you want to delete this customer?');" })
+                   @Html.ActionLink("Edit", "EditCalls", new { id = call.CallID }) |
+                   @Html.ActionLink("Delete", "DeleteCall", new { id = call.CallID }, new { onclick = "return confirm('Are you sure you want to delete this Call?');" })
                </td>
            </tr>
        }
