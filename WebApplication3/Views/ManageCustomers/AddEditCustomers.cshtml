@@ -1,0 +1,114 @@
+@model Customer
+<style>
+.back-button{
+    
+}
+
+.flex-items{
+
+    display: flex;
+    gap: 20px;
+}
+
+</style>
+
+
+@{
+    var id = ViewBag.CustomerId;
+    Customer customer = ViewBag.Customer;
+
+
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CRM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<h2>Customer Form</h2>
+
+<form id="customerForm">
+    
+      <div>
+            <label for="customerId">Customer ID:</label>
+            <input  id="customerId" name="CustomerId" value="@id"> 
+        </div>
+    
+    <div>
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" name="CustomerName" value="@customer.CustomerName">
+    </div>
+
+    <div>
+        <label for="customerSurname">Customer Surname:</label>
+        <input type="text" id="customerSurname" name="CustomerSurname" value="@customer.CustomerSurname">
+    </div>
+
+    <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="Address" value="@customer.Address">
+    </div>
+
+    <div>
+        <label for="postCode">Post Code:</label>
+        <input type="text" id="postCode" name="PostCode" value="@customer.PostCode">
+    </div>
+
+    <div>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="Country" value="@customer.Country">
+    </div>
+
+    <div>
+        @* <label for="dateOfBirth">Date of Birth:</label> *@
+        <input type="hidden" id="dateOfBirth" name="DateOfBirth" value="@customer.DateOfBirth">
+    </div>
+
+    <div class="flex-items" id="flex-items">
+        <button type="button" id="submitBtn">Submit</button>
+    </div>
+</form>
+@section scripts {
+   <script>
+       document.addEventListener('DOMContentLoaded', function () {
+           document.getElementById('submitBtn').addEventListener('click', function () {
+
+               let formData = new FormData(document.getElementById('customerForm'));
+               let myForm = $('#customerForm');
+               fetch('/edit-customer', {
+                   method: 'POST',
+                   body: myForm.serialize(),
+                   headers: {
+                 'Content-Type': 'application/x-www-form-urlencoded'
+                   }
+               })
+               .then(res => {
+            
+                   document.getElementById('customerForm').reset();
+                    window.location.href = '/customers';
+                  
+               })
+               .catch(error => {
+      
+                   console.error(error);
+               });
+           });
+       });
+   </script>
+
+}

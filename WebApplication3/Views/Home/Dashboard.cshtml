@@ -1,0 +1,104 @@
+@page
+@using WebApplication3.Controllers
+@model WebApplication2.Views.Home.Dashboard
+
+<style>
+    /* Style for the big square links */
+    .btn {
+        display: inline-block;
+        padding: 20px; /* Adjust the padding to make it larger or smaller */
+        margin: 10px; /* Adjust the margin for spacing between links */
+        background-color: #3498db; /* Set the background color */
+        color: #fff; /* Set the text color */
+        text-decoration: none; /* Remove the default underline */
+        border-radius: 10px; /* Add rounded corners */
+        font-size: 18px; /* Set the font size */
+    }
+
+  
+    .btn:nth-child(2) {
+        background-color: #e74c3c; /* Change the background color for the second link */
+    }
+    .disabled-link {
+            pointer-events: none;
+            cursor: not-allowed;
+            opacity: 0.5; /* Optional: Add some visual indication that the link is disabled */
+        }
+</style>
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CRM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Login</a>
+                    </li>
+                    <li class="nav-item">
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<a class="btn @(User.IsInRole("MANAGER") ? "" : "disabled-link")" href="/customers">Customers</a>
+<a class="btn @(User.IsInRole("EMPLOYEE") ? "" : "disabled-link")" href="/CustomerCalls">Calls</a>
+<a class="btn @(User.IsInRole("MANAGER") ? "" : "disabled-link")" href="/">Report</a>
+
+
+@section scripts {
+    <script>
+  
+    function loadTab1(){
+     
+          let element = $('#tab1');
+          let action = element.data('action');
+          
+          let xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function () {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                  $(element.attr('href')).html(xhr.responseText); // Use jQuery methods for manipulation
+              }
+             
+          };
+        xhr.open('GET', '/' + action, true);
+        xhr.send(); 
+    }
+    function loadTabs(){
+            document.querySelectorAll('#myTabs a').forEach(function (tab) {
+            
+                tab.addEventListener('click', function (e) {
+                    e.preventDefault();
+     
+                    var controller = tab.getAttribute('data-controller');
+                    var action = tab.getAttribute('data-action');
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            document.querySelector(tab.getAttribute('href')).innerHTML = xhr.responseText;
+                        }
+                    };
+
+                    xhr.open('GET', '/'  + action, true);
+                    xhr.send();
+                });
+            });
+    } 
+    document.addEventListener('DOMContentLoaded', function () {
+               $('#tab1').click();
+               loadTab1();
+                loadTabs();
+            });
+        </script>
+    }
+
+
+
