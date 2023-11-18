@@ -5,19 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - WebApplication3</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/WebApplication3.styles.css" asp-append-version="true"/>
 </head>
+
+<style>
+    #logoutBtn{
+       position: absolute;
+       right: 50px;
+       top: 50px;
+    }
+</style>
 <body>
 
 <div class="container">
     <main role="main" class="pb-3">
+        <button id="logoutBtn">Log Out</button>
         @RenderBody()
     </main>
 </div>
 
-
+<script>
+    document.getElementById('logoutBtn').addEventListener('click', function () {
+ 
+        window.location.href = '/logout';
+    });
+</script>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 

@@ -82,4 +82,13 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    [HttpGet("/logout")]
+    public IActionResult Logout()
+    {
+        // Clear the 'Role' cookie
+        Response.Cookies.Delete("Role");
+
+        // Redirect to a new page
+        return RedirectToAction("Index", "Home");
+    }
 }

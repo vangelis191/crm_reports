@@ -34,15 +34,31 @@
         font-size: 16px;
         margin-top: 20px;
     }
+    .btn {
+        display: inline-block;
+        padding: 15px; /* Adjust the padding to make it larger or smaller */
+        margin: 10px; /* Adjust the margin for spacing between links */
+        background-color: #3498db; /* Set the background color */
+        color: #fff; /* Set the text color */
+        text-decoration: none; /* Remove the default underline */
+        border-radius: 10px; /* Add rounded corners */
+        font-size: 18px; /* Set the font size */
+        }
+
+  
+    .btn:nth-child(2) {
+        background-color: #e74c3c; /* Change the background color for the second link */
+    }
 </style>
 
 
    
 <h2>Manage Calls</h2>
+
 <a href="/dashboard">Back to DashBoard</a>
 
 @if (calls != null && calls.Any())
-{
+{<a class="btn " href="/">Add New Customer</a>
    <table class="table">
        <thead>
            <tr>
