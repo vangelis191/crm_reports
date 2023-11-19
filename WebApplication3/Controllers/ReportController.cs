@@ -24,17 +24,6 @@ public class ReportController : Controller
         try
         {
             _logger.LogInformation("ExportReport action started.");
-
-           List<CallWithCustomerInfo> calls = _service.GetAllCallsWithCustomers();
-            
-           _logger.LogInformation($"Number of calls: {calls.Count}");
-
-           foreach (var call in calls)
-           {
-               Console.WriteLine($"CallId: {call.CallId}, DateOfCall: {call.Description}");
-           }
-
-
          
             Report reports = new Report();
 
@@ -58,10 +47,8 @@ public class ReportController : Controller
                 reports.Dispose();
                 pdfExport.Dispose();
                 ms.Position = 0;
-
                 _logger.LogInformation("Report exported successfully.");
                 return File(ms, "application/pdf", "reports.pdf");
-       
             }
 
             _logger.LogError("Report preparation failed.");

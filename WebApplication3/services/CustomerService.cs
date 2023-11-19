@@ -53,4 +53,14 @@ public class CustomerService
     {
         _repository.SaveCall(editedCall);
     }
+
+    public void AddNewCustomer(Customer customer)
+    {
+        _repository.AddNewCustomer(customer);
+    }
+
+    public void AddNewCall(Call call)
+    {
+        _repository.AddNewCall(call);
+    }
 }

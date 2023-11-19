@@ -252,6 +252,51 @@ public class CustomerRepository
             }
         }
     }
-    
 
+
+    public void AddNewCustomer(Customer customer)
+    {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand("InsertCustomer", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@CustomerName", customer.CustomerName);
+                    cmd.Parameters.AddWithValue("@CustomerSurname", customer.CustomerSurname);
+                    cmd.Parameters.AddWithValue("@Address", customer.Address);
+                    cmd.Parameters.AddWithValue("@PostCode", customer.PostCode);
+                    cmd.Parameters.AddWithValue("@Country", customer.Country);
+                    cmd.Parameters.AddWithValue("@DateOfBirth", customer.DateOfBirth);
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            
+        }
+
+    }
+
+    public void AddNewCall(Call call)
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
+            using (SqlCommand cmd = new SqlCommand("InsertCall", connection))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@CustomerId", call.CustomerId);
+                cmd.Parameters.AddWithValue("@DateOfCall", call.DateOfCall);
+                cmd.Parameters.AddWithValue("@TimeOfCall", call.TimeOfCall);
+                cmd.Parameters.AddWithValue("@Subject", call.Subject);
+                cmd.Parameters.AddWithValue("@Description", call.Description);
+
+                cmd.ExecuteNonQuery();
+            }
+
+        }
+    }
 }

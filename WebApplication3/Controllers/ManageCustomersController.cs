@@ -38,6 +38,12 @@ public class ManageCustomersController : Controller
         return View(model);
     }
     
+    [HttpGet("add-customer")]
+    public ActionResult EditCustomer()
+    {
+
+        return View("AddCustomer");
+    }
     
     [HttpGet("customer/{id}")]
     public ActionResult EditCustomer(int id)
@@ -45,6 +51,33 @@ public class ManageCustomersController : Controller
         ViewBag.CustomerId = id;
          ViewBag.Customer = _service.GetCustomerById(id);
         return View("EditCustomers");
+    }
+    
+    [HttpPost("add-save-customer")]
+    public void AddCustomer(IFormCollection form)
+    {
+        
+        string customerName = form["CustomerName"];
+        string customerSurname = form["CustomerSurname"];
+        string address = form["Address"];
+        string postCode = form["PostCode"];
+        string country = form["Country"];
+        string DateOfBirth = form["DateOfBirth"];
+        
+
+        Customer customer = new Customer
+        {
+          
+            CustomerName = customerName,
+            CustomerSurname = customerSurname,
+            Address = address,
+            PostCode = postCode,
+            Country = country,
+            DateOfBirth =DateTime.Parse(DateOfBirth)
+
+       
+        };
+        _service.AddNewCustomer(customer);
     }
     
     [HttpPost("edit-customer")]
@@ -78,7 +111,7 @@ public class ManageCustomersController : Controller
     public ActionResult DeleteCustomer(int id)
     {
         _service.DeleteUser(id);
-        return RedirectToAction("Dashboard","Home");
+        return RedirectToAction("Customers");
     }
 
    

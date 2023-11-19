@@ -37,6 +37,36 @@ public class ManageCallsController : Controller
 
         return View(model);
     }
+    [HttpGet("add-call")]
+    public ActionResult AddCall()
+    {
+
+  
+
+        return View("AddCall");
+    }
+    
+    [HttpPost("add-save-call")]
+    public void AddCall(IFormCollection form)
+    {
+        string customerId = form["CustomerId"]; 
+        string dateOfCall = form["DateOfCall"];
+        string timeOfCall = form["TimeOfCall"];
+        string subject = form["Subject"];
+        string description = form["Description"];
+
+        Call call = new Call
+        {
+            CustomerId = int.Parse(customerId), // Assuming CustomerId is an integer
+            DateOfCall = DateTime.Parse(dateOfCall),
+            TimeOfCall = TimeSpan.Parse(timeOfCall),
+            Subject = subject,
+            Description = description
+        };
+
+        _service.AddNewCall(call);
+
+    }
     
     
     [HttpGet("call/{id}")]

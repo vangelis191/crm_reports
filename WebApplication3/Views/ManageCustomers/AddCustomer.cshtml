@@ -1,0 +1,93 @@
+﻿
+@model WebApplication3.Views.ManageCustomers.AddCustomer
+
+
+<style>
+    .back-button {
+
+    }
+
+    .flex-items {
+
+        display: flex;
+        gap: 20px;
+    }
+</style>
+
+@{
+    var id = ViewBag.CustomerId;
+    Customer customer = ViewBag.Customer;
+}
+
+<header>
+    <!-- Your header code remains unchanged -->
+</header>
+
+<h2>Customer Form</h2>
+
+<form id="customerForm">
+    <div>
+        <!-- Customer ID is not needed for adding a new customer -->
+    </div>
+
+    <div>
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" name="CustomerName">
+    </div>
+
+    <div>
+        <label for="customerSurname">Customer Surname:</label>
+        <input type="text" id="customerSurname" name="CustomerSurname">
+    </div>
+
+    <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="Address">
+    </div>
+
+    <div>
+        <label for="postCode">Post Code:</label>
+        <input type="text" id="postCode" name="PostCode">
+    </div>
+
+    <div>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="Country">
+    </div>
+
+  <div>
+      <label for="dateOfBirth">Date of Birth:</label>
+      <input type="date" id="dateOfBirth" name="DateOfBirth">
+  </div>
+
+
+    <div class="flex-items" id="flex-items">
+        <button type="button" id="submitBtn">Submit</button>
+    </div>
+</form>
+
+@section scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('submitBtn').addEventListener('click', function () {
+
+                let formData = new FormData(document.getElementById('customerForm'));
+                let myForm = $('#customerForm');
+                fetch('/add-save-customer', { 
+                    method: 'POST',
+                    body: myForm.serialize(),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
+                .then(res => {
+                    document.getElementById('customerForm').reset();
+                    window.location.href = '/customers';
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+            });
+        });
+    </script>
+}
