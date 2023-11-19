@@ -1,0 +1,20 @@
+<Report>
+  <Dictionary>
+    <TableDataSource Name="Calls" ReferenceName="Calls" />
+    <DataBand Name="DataBand1" DataSource="Calls">
+      <TextObject Name="Text1" Text="CallID: {Calls.CallID}" Width="2cm" Height="0.5cm" />
+      <TextObject Name="Text2" Text="DateOfCall: {Calls.DateOfCall}" Width="2cm" Height="0.5cm" />
+      <TextObject Name="Text3" Text="TimeOfCall: {Calls.TimeOfCall}" Width="2cm" Height="0.5cm" />
+      <TextObject Name="Text4" Text="Subject: {Calls.Subject}" Width="2cm" Height="0.5cm" />
+      <TextObject Name="Text5" Text="Description: {Calls.Description}" Width="2cm" Height="0.5cm" />
+      <TextObject Name="Text6" Text="CustomerId: {Calls.CustomerId}" Width="2cm" Height="0.5cm" />
+      <TextObject Name="Text7" Text="CustomerName: {Calls.CustomerName}" Width="2cm" Height="0.5cm" />
+      <TextObject Name="Text8" Text="CustomerSurname: {Calls.CustomerSurname}" Width="2cm" Height="0.5cm" />
+      <TextObject Name="Text9" Text="Address: {Calls.Address}" Width="2cm" Height="0.5cm" />
+      <TextObject Name="Text10" Text="PostCode: {Calls.PostCode}" Width="2cm" Height="0.5cm" />
+      <TextObject Name="Text11" Text="Country: {Calls.Country}" Width="2cm" Height="0.5cm" />
+      <TextObject Name="Text12" Text="DateOfBirth: {Calls.DateOfBirth}" Width="2cm" Height="0.5cm" />
+      <!-- Add other fields as needed -->
+    </DataBand>
+  </Dictionary>
+</Report>

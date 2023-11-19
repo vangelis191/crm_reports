@@ -3,7 +3,7 @@ namespace WebApplication3.Helper;
 public class CallWithCustomerInfo
 {
     // Add properties to represent the columns in the result set
-    public int CallID { get; set; }
+    public int CallId { get; set; }
     public DateTime DateOfCall { get; set; }
     public TimeSpan TimeOfCall { get; set; }
     public string Subject { get; set; }

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/WebApplication3.csproj": {}
+    "C:\\Users\\vangelis\\Desktop\\WebApplication3\\WebApplication3\\WebApplication3.csproj": {}
   },
   "projects": {
-    "/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/WebApplication3.csproj": {
+    "C:\\Users\\vangelis\\Desktop\\WebApplication3\\WebApplication3\\WebApplication3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/WebApplication3.csproj",
+        "projectUniqueName": "C:\\Users\\vangelis\\Desktop\\WebApplication3\\WebApplication3\\WebApplication3.csproj",
         "projectName": "WebApplication3",
-        "projectPath": "/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/WebApplication3.csproj",
-        "packagesPath": "/Users/vangelischasiotis/.nuget/packages/",
-        "outputPath": "/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/obj/",
+        "projectPath": "C:\\Users\\vangelis\\Desktop\\WebApplication3\\WebApplication3\\WebApplication3.csproj",
+        "packagesPath": "C:\\Users\\vangelis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vangelis\\Desktop\\WebApplication3\\WebApplication3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/vangelischasiotis/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\vangelis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +40,22 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "FastReport.Compat": {
+              "target": "Package",
+              "version": "[2023.3.1, )"
+            },
+            "FastReport.Data.MsSql": {
+              "target": "Package",
+              "version": "[2023.3.7, )"
+            },
+            "FastReport.OpenSource": {
+              "target": "Package",
+              "version": "[2023.3.13, )"
+            },
+            "FastReport.OpenSource.Export.PdfSimple": {
+              "target": "Package",
+              "version": "[2023.3.13, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.14, )"
@@ -54,6 +72,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -62,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

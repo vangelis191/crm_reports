@@ -1,3 +1,4 @@
+using FastReport.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using WebApplication3.Repository;
 using WebApplication3.services;
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+ FastReport.Utils.RegisteredObjects.AddConnection(typeof(MsSqlDataConnection));
 
 var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
 
@@ -54,6 +56,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();

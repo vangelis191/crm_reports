@@ -80,8 +80,8 @@
                <td>@call.Subject</td>
                <td>@call.Description)</td>
                <td>
-                   @Html.ActionLink("Edit", "EditCalls", new { id = call.CallID }) |
-                   @Html.ActionLink("Delete", "DeleteCall", new { id = call.CallID }, new { onclick = "return confirm('Are you sure you want to delete this Call?');" })
+                   @Html.ActionLink("Edit", "EditCalls", new { id = call.CallId }) |
+                   @Html.ActionLink("Delete", "DeleteCall", new { id = call.CallId }, new { onclick = "return confirm('Are you sure you want to delete this Call?');" })
                </td>
            </tr>
        }

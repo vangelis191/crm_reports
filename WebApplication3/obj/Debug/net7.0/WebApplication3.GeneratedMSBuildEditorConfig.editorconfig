@@ -9,57 +9,63 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApplication3
 build_property.RootNamespace = WebApplication3
-build_property.ProjectDir = /Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/
+build_property.ProjectDir = C:\Users\vangelis\Desktop\WebApplication3\WebApplication3\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3
+build_property.MSBuildProjectDirectory = C:\Users\vangelis\Desktop\WebApplication3\WebApplication3
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/Home/Dashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9EYXNoYm9hcmQuY3NodG1s
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/ManageCalls/CustomerCalls.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlQ2FsbHMvQ3VzdG9tZXJDYWxscy5jc2h0bWw=
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/ManageCalls/CustomerCalls.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlQ2FsbHNcQ3VzdG9tZXJDYWxscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/ManageCalls/EditCalls.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlQ2FsbHMvRWRpdENhbGxzLmNzaHRtbA==
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/ManageCalls/EditCalls.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlQ2FsbHNcRWRpdENhbGxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/ManageCustomers/Customers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlQ3VzdG9tZXJzL0N1c3RvbWVycy5jc2h0bWw=
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/ManageCustomers/Customers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlQ3VzdG9tZXJzXEN1c3RvbWVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/ManageCustomers/EditCustomers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlQ3VzdG9tZXJzL0VkaXRDdXN0b21lcnMuY3NodG1s
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/ManageCustomers/EditCustomers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlQ3VzdG9tZXJzXEVkaXRDdXN0b21lcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/Report/Reports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFJlcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/vangelischasiotis/RiderProjects/WebApplication3/WebApplication3/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-hya521vvqs
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vangelis/Desktop/WebApplication3/WebApplication3/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-7kk3sr3rte

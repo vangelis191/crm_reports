@@ -50,7 +50,7 @@
 
 <a class="btn @(User.IsInRole("MANAGER") ? "" : "disabled-link")" href="/customers">Customers</a>
 <a class="btn @(User.IsInRole("EMPLOYEE") ? "" : "disabled-link")" href="/CustomerCalls">Calls</a>
-<a class="btn @(User.IsInRole("MANAGER") ? "" : "disabled-link")" href="/">Report</a>
+<a class="btn @(User.IsInRole("MANAGER") ? "" : "disabled-link")" href="/Reports">Report</a>
 
 
 @section scripts {

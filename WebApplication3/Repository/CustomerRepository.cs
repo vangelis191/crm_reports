@@ -150,7 +150,7 @@ public class CustomerRepository
                     {
                         CallWithCustomerInfo call = new CallWithCustomerInfo
                         {
-                            CallID = (int)reader["CallID"],
+                            CallId = (int)reader["CallID"],
                             DateOfCall = (DateTime)reader["DateOfCall"],
                             TimeOfCall = (TimeSpan)reader["TimeOfCall"],
                             Subject = (string)reader["Subject"],
@@ -252,4 +252,6 @@ public class CustomerRepository
             }
         }
     }
+    
+
 }

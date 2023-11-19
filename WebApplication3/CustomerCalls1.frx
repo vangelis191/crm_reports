@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <Report ScriptLanguage="CSharp" xmlns="http://www.fast-report.com/ns/1.0" xmlns:sql="http://www.fast-report.com/ns/1.0/sql">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqAFHGp6KQj27H4qUwAIR20hSnyrpNtgmeY+I5zyTmYE0HuZfX1hs9fAqnt4DRtzHm7OKpJOMZ4YS0iQMKlYFGfAUFFLEraVT2pd9Z7u6rF7/0TiN3GtSDlPiaoP1KmBLC3hoKVWk3kOJjFwXYRdGvaHioKWN5IMb0AiCBk/xhUJQ9rkquNHIp//yJw8BNP1f6">
+      <TableDataSource Name="Customer" DataType="System.Int32" Enabled="true" TableName="Customer">
+        <Column Name="CustomerId" DataType="System.Int32"/>
+        <Column Name="CustomerName" DataType="System.String"/>
+        <Column Name="CustomerSurname" DataType="System.String"/>
+        <Column Name="Address" DataType="System.String"/>
+        <Column Name="PostCode" DataType="System.String"/>
+        <Column Name="Country" DataType="System.String"/>
+        <Column Name="DateOfBirth" DataType="System.DateTime"/>
+      </TableDataSource>
+      <TableDataSource Name="Call" DataType="System.Int32" Enabled="true" TableName="Call">
+        <Column Name="CallId" DataType="System.Int32"/>
+        <Column Name="CustomerID" DataType="System.Int32"/>
+        <Column Name="DateOfCall" DataType="System.DateTime"/>
+        <Column Name="TimeOfCall" DataType="System.TimeSpan"/>
+        <Column Name="Subject" DataType="System.String"/>
+        <Column Name="Description" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8"/>
+    <PageHeaderBand Name="PageHeader1" Top="40.47" Width="718.2" Height="28.35">
+      <TextObject Name="Text2" Left="9.45" Width="94.5" Height="18.9" Text="CustomerId" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="94.5" Width="94.5" Height="18.9" Text="CustomerName" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="198.45" Width="94.5" Height="18.9" Text="CustomerSurname" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="302.4" Width="94.5" Height="18.9" Text="DateOfCall" Font="Arial, 10pt"/>
+      <TextObject Name="Text10" Left="406.35" Width="94.5" Height="18.9" Text="TimeOfCall" Font="Arial, 10pt"/>
+      <TextObject Name="Text12" Left="510.3" Width="94.5" Height="18.9" Text="Subject" Font="Arial, 10pt"/>
+      <TextObject Name="Text14" Left="604.8" Width="94.5" Height="18.9" Text="Description" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="71.48" Width="718.2" Height="75.6" DataSource="Customer">
+      <TextObject Name="Text1" Left="9.45" Top="9.45" Width="94.5" Height="18.9" Text="[Customer.CustomerId]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="94.5" Top="9.45" Width="94.5" Height="18.9" Text="[Customer.CustomerName]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="189" Top="9.45" Width="94.5" Height="18.9" Text="[Customer.CustomerSurname]" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="292.95" Top="9.45" Width="94.5" Height="18.9" Text="[Call.DateOfCall]" Format="Date" Format.Format="d" Font="Arial, 10pt"/>
+      <TextObject Name="Text9" Left="406.35" Top="9.45" Width="94.5" Height="18.9" Text="[Call.TimeOfCall]" Font="Arial, 10pt"/>
+      <TextObject Name="Text11" Left="510.3" Top="9.45" Width="75.6" Height="18.9" Text="[Call.Subject]" Font="Arial, 10pt"/>
+      <TextObject Name="Text13" Left="604.8" Top="9.45" Width="113.4" Height="18.9" Text="[Call.Description]" Font="Arial, 10pt"/>
+      <HtmlObject Name="Html1" Left="737.1" Top="18.9" Width="94.5" Height="18.9"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="149.75" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>
