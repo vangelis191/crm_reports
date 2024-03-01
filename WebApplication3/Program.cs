@@ -27,12 +27,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     .AddCookie(options =>
     {
         options.Cookie.Name = "Role";
-        // Other cookie options...
+       
     });
 
 builder.Services.AddAuthorization(options =>
 {
-    // Configure your authorization policies here
+   
     options.AddPolicy("EmployeePolicy", policy =>
     {
         policy.RequireRole("EMPLOYEE");
@@ -47,11 +47,11 @@ builder.Services.AddAuthorization(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+   
     app.UseHsts();
 }
 
